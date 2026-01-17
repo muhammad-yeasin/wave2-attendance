@@ -36,8 +36,8 @@ const whatsappSchema = z.object({
   whatsappNumber: z
     .string()
     .min(1, { message: "ওয়াটসঅ্যাপ নম্বর দিন" })
-    .regex(/^01\d{9}$/, {
-      message: "১১ সংখ্যার নম্বর দিন যা 01 দিয়ে শুরু",
+    .regex(/^\+?[0-9]{7,15}$/, {
+      message: "সঠিক ওয়াটসঅ্যাপ নম্বর দিন (৭-১৫ সংখ্যা, + চিহ্ন ঐচ্ছিক)",
     }),
 });
 

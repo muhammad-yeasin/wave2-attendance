@@ -5,8 +5,8 @@ import { User } from "@/models/user";
 
 const bodySchema = z.object({
   userId: z.string().min(1, { message: "ব্যবহারকারী সনাক্ত করা যায়নি" }),
-  whatsappNumber: z.string().regex(/^01\d{9}$/, {
-    message: "১১ সংখ্যার বাংলা মোবাইল নম্বর দিন, যা 01 দিয়ে শুরু",
+  whatsappNumber: z.string().regex(/^\+?[0-9]{7,15}$/, {
+    message: "সঠিক ওয়াটসঅ্যাপ নম্বর দিন (৭-১৫ সংখ্যা)",
   }),
 });
 
